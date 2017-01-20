@@ -1,0 +1,28 @@
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th >Id</th>
+      <th >Name</th>
+      <th>Age</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.kor %></td>
+        <td><%= link_to 'Edit user', edit_user_path(user) %></td>
+        <td><%= link_to 'Delete user', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Select' %></td>
+      </tr>
+    <% end %>
+    <%= link_to 'New user', new_user_path %>
+  </tbody>
+</table>
+
+<br>
